@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Manrope:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #14261F;
+  --bg-deep: #0F201A;
+  --bg-elevated: #1C332A;
+
+  --text-primary: #F0EEE5;
+  --text-secondary: #9DB0A5;
+
+  --brass: #B5A46A;
+  --brass-light: #D9CFA0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: 'Manrope', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--brass);
+    color: var(--bg-base);
+  }
+}
+
+@layer components {
+  .font-serif-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .container-px {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .container-px {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-px {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  .max-w-content {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .brass-line {
+    background-color: var(--brass);
+    opacity: 0.25;
+  }
+
+  .btn-brass {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--brass);
+    color: var(--brass);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  .btn-brass:hover {
+    background-color: var(--brass);
+    color: var(--bg-base);
+  }
+
+  .specialty-chip {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--brass);
+    color: var(--text-primary);
+    padding: 0.35rem 0.75rem;
+    border-radius: 3px;
+    font-size: 0.8125rem;
+    line-height: 1.2;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 400ms ease-out, transform 400ms ease-out;
+  }
+
+  .fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .portfolio-img-wrap {
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  .portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 400ms ease-out;
+  }
+
+  .portfolio-img-wrap:hover .portfolio-img {
+    transform: scale(1.03);
+  }
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .portfolio-img {
+    transition: none !important;
+  }
+  .portfolio-img-wrap:hover .portfolio-img {
+    transform: none !important;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
