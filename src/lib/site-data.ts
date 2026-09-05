@@ -6,8 +6,8 @@ export const site = {
   brand: "DDBarbershop_",
   // TODO: haqiqiy telefon raqamini kiriting
   phone: {
-    label: "+998 91 636 42 90",
-    href: "tel:+998916364290",
+    label: "+998 91 636 47 90",
+    href: "tel:+998916364790",
   },
   address: "Toshkent shahar, Chilonzor tumani, 5-mavze, 29-uy",
   hours: "Dushanba — dam olish kuni. Seshanba–yakshanba: 11:00–23:00",
@@ -34,7 +34,7 @@ export const hero = {
   description:
     "Tajribali ustalar, sokin muhit va sizga mos uslub.",
   ctaLabel: "Qo'ng'iroq qilish",
-  ctaHref: "tel:+998916364290",
+  ctaHref: "tel:+998916364790",
   secondaryLink: { label: "Ustalar bilan tanishish", href: "#ustalar" },
   image: new URL("../hero.png", import.meta.url).href,
   imageAlt: "Barber Doston soch turmagi yasayotganda",
@@ -67,7 +67,7 @@ export const masters: readonly Master[] = [
     experience: "8+ yillik tajriba",
     bio: "Doston har bir mijoz bilan ishni uning istagi, soch tuzilishi va uslubini hisobga olishdan boshlaydi. Klassik turmaklardan zamonaviy fade uslublarigacha — barchasini puxta va tartibli bajaradi. Uning maqsadi shunchaki chiroyli emas, balki har kuni parvarish qilish oson bo'lgan natija yaratish.",
     specialties: ["Fade va taper", "Klassik turmak", "Zamonaviy uslublar"],
-    phone: { label: "+998 91 636 42 90", href: "tel:+998916364290" },
+    phone: { label: "+998 91 636 47 90", href: "tel:+998916364790" },
     image: new URL("../Barber1-Doston.jpg", import.meta.url).href,
     imageAlt: "Usta Doston — erkaklar soch turmagi ustasi",
   },
@@ -279,6 +279,6 @@ export const footer = {
   title: "Yangi obraz — bitta qo'ng'iroqdan boshlanadi.",
   subtitle: "Qulay vaqtingizni tanlash uchun biz bilan bog'laning.",
   ctaLabel: "Qo'ng'iroq qilish",
-  ctaHref: "tel:+998916364290",
+  ctaHref: "tel:+998916364790",
   copyright: "© DDBarbershop_. Barcha huquqlar himoyalangan.",
 };
