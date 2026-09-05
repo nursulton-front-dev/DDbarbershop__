@@ -6,20 +6,15 @@ export const site = {
   brand: "DDBarbershop_",
   // TODO: haqiqiy telefon raqamini kiriting
   phone: {
-    label: "+998 90 123 45 67",
-    href: "tel:+998901234567",
+    label: "+998 91 636 42 90",
+    href: "tel:+998916364290",
   },
-  address: "Toshkent, Yunusobod tumani, Amir Temur ko'chasi 12",
-  hours: "Har kuni, 09:00–21:00",
-  // TODO: haqiqiy ijtimoiy tarmiq havolalarini kiriting
+  address: "Toshkent shahar, Chilonzor tumani, 5-mavze, 29-uy",
+  hours: "Dushanba — dam olish kuni. Seshanba–yakshanba: 11:00–23:00",
   social: {
     instagram: {
       label: "@ddbarbershop_",
-      href: "#", // https://instagram.com/ddbarbershop_
-    },
-    telegram: {
-      label: "@ddbarbershop_",
-      href: "#", // https://t.me/ddbarbershop_
+      href: "https://www.instagram.com/ddbarbershop_",
     },
   },
 } as const;
@@ -34,17 +29,15 @@ export const nav = [
 
 export const hero = {
   eyebrow: "TOSHKENT · 8+ YILLIK TAJRIBA",
-  titleTop: "Puxta ish.",
-  titleBottom: "Aniq natija.",
-  brand: "DDBarbershop_",
+  titleTop: "Imijingizni bizga ishoning!",
+  titleBottom: "",
   description:
-    "Toshkentda zamonaviy erkaklar soch turmagi, soqol parvarishi va individual yondashuv.",
+    "Tajribali ustalar, sokin muhit va sizga mos uslub.",
   ctaLabel: "Qo'ng'iroq qilish",
-  ctaHref: "tel:+998901234567",
+  ctaHref: "tel:+998916364290",
   secondaryLink: { label: "Ustalar bilan tanishish", href: "#ustalar" },
-  image:
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=80",
-  imageAlt: "Barber soch turmagi yasayotganda",
+  image: new URL("../hero.png", import.meta.url).href,
+  imageAlt: "Barber Doston soch turmagi yasayotganda",
 };
 
 export const trust = [
@@ -53,36 +46,46 @@ export const trust = [
   { value: "5.0", label: "Google baho" },
 ] as const;
 
-export const masters = [
+export interface Master {
+  name: string;
+  role: string;
+  /** Ixtiyoriy belgi, masalan: "VIP xona". */
+  badge?: string;
+  experience: string;
+  bio: string;
+  specialties: readonly string[];
+  phone: { label: string; href: string };
+  image: string;
+  imageAlt: string;
+}
+
+export const masters: readonly Master[] = [
   {
-    name: "Jasur",
+    name: "Doston",
     role: "Erkaklar soch turmagi ustasi",
+    badge: "VIP xona",
     experience: "8+ yillik tajriba",
-    shortLine: "Aniq shakl, toza o'tishlar va mijozga mos uslub.",
-    bio: "Jasur har bir mijoz bilan ish boshlashdan oldin uning istagi, kundalik uslubi va soch tuzilishini hisobga oladi. Klassik soch turmaklaridan zamonaviy fade uslublarigacha puxta va tartibli ishlaydi. Uning asosiy maqsadi — faqat yaxshi ko'rinadigan emas, balki kundalik parvarishda ham qulay bo'lgan natijani yaratish.",
-    specialties: ["Fade va taper", "Klassik turmak", "Soqolga shakl berish"],
-    phone: { label: "+998 90 123 45 67", href: "tel:+998901234567" },
-    image:
-      "https://images.unsplash.com/photo-1503951914875-45212b0136266?auto=format&fit=crop&w=1000&q=80",
-    imageAlt: "Usta Jasur — erkaklar soch turmagi ustasi",
+    bio: "Doston har bir mijoz bilan ishni uning istagi, soch tuzilishi va uslubini hisobga olishdan boshlaydi. Klassik turmaklardan zamonaviy fade uslublarigacha — barchasini puxta va tartibli bajaradi. Uning maqsadi shunchaki chiroyli emas, balki har kuni parvarish qilish oson bo'lgan natija yaratish.",
+    specialties: ["Fade va taper", "Klassik turmak", "Zamonaviy uslublar"],
+    phone: { label: "+998 91 636 42 90", href: "tel:+998916364290" },
+    image: new URL("../Barber1-Doston.jpg", import.meta.url).href,
+    imageAlt: "Usta Doston — erkaklar soch turmagi ustasi",
   },
   {
     name: "Diyor",
-    role: "Soch va soqol uslubi bo'yicha usta",
+    role: "Erkaklar soch turmagi ustasi",
     experience: "8+ yillik tajriba",
-    shortLine: "Detallarga e'tibor, sokin ish jarayoni va puxta yakun.",
-    bio: "Diyor yuz shakli, sochning o'sish yo'nalishi va mijozning umumiy obraziga qarab mos yechim taklif qiladi. Soch va soqol uyg'unligiga alohida e'tibor beradi, ishni shoshmasdan va har bir detalni tekshirgan holda yakunlaydi. Natijada obraz tartibli, tabiiy va mijozning xarakteriga mos ko'rinadi.",
+    bio: "Diyor yuz shakli, soch o'sish yo'nalishi va mijozning umumiy obraziga qarab mos yechim taklif qiladi. Ishni shoshmasdan, har bir detalni tekshirgan holda yakunlaydi. Natijada obraz tartibli, tabiiy va mijozning xarakteriga mos ko'rinadi.",
     specialties: [
-      "Soch va soqol uyg'unligi",
       "Teksturali turmak",
       "Individual maslahat",
+      "Zamonaviy uslublar",
     ],
-    phone: { label: "+998 90 123 45 67", href: "tel:+998901234567" },
-    image:
-      "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1000&q=80",
+    phone: { label: "+998 33 888 1004", href: "tel:+998338881004" },
+    image: new URL("../Barber2-Diyor.JPG", import.meta.url).href,
     imageAlt: "Usta Diyor — soch va soqol uslubi bo'yicha usta",
   },
-] as const;
+];
 
 export const advantages = [
   {
@@ -108,73 +111,102 @@ export const advantages = [
   },
 ] as const;
 
-export const services = [
-  {
-    number: "01",
-    title: "Soch turmagi",
-    description: "Maslahat, soch turmagi va yakuniy styling.",
-    price: "80 000 so'm",
-  },
-  {
-    number: "02",
-    title: "Soqol olish",
-    description: "Soqolga shakl berish va konturlarni tozalash.",
-    price: "60 000 so'm",
-  },
-  {
-    number: "03",
-    title: "Soch + soqol",
-    description: "Yagona va tartibli obraz uchun to'liq xizmat.",
-    price: "120 000 so'm",
-  },
-  {
-    number: "04",
-    title: "Bolalar uchun",
-    description: "Sokin va ehtiyotkor yondashuv.",
-    price: "50 000 so'm",
-  },
-] as const;
+export interface PriceItem {
+  title: string;
+  /** So'mdagi qiymat. Ko'rsatishda formatPrice() orqali formatlanadi. */
+  amount: number;
+}
+
+export interface PriceGroup {
+  master: string;
+  badge?: string;
+  items: readonly PriceItem[];
+}
+
+export const pricing = {
+  eyebrow: "XIZMATLAR",
+  title: "Narxlar",
+  subtitle: "Har bir usta uchun aniq va shaffof narxlar.",
+  groups: [
+    {
+      master: "Doston",
+      badge: "VIP xona",
+      items: [
+        { title: "Soch olish", amount: 200000 },
+        { title: "Soqol olish", amount: 100000 },
+        { title: "Soqol (moshinkada)", amount: 70000 },
+        { title: "Soch + soqol", amount: 300000 },
+        { title: "Bolalar uchun", amount: 150000 },
+      ],
+    },
+    {
+      master: "Diyor",
+      items: [
+        { title: "Soch olish", amount: 150000 },
+        { title: "Soqol olish", amount: 80000 },
+        { title: "Soqol (moshinkada)", amount: 50000 },
+        { title: "Bolalar uchun", amount: 100000 },
+      ],
+    },
+  ] as readonly PriceGroup[],
+};
 
 export const portfolio = [
   {
-    src: "https://images.unsplash.com/photo-1503951914875-45212b0136266?auto=format&fit=crop&w=900&q=80",
-    alt: "Fade uslubidagi soch turmagi",
-    span: "tall",
+    src: new URL("../assets/portfolio/web/1.jpg", import.meta.url).href,
+    alt: "Yon ajrimli klassik turmak va tartibli soqol",
+    label: "Klassik uslub",
+    focus: "50% 80%",
+    zoom: 1.5,
   },
   {
-    src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80",
-    alt: "Taper uslubidagi soch turmagi",
-    span: "short",
+    src: new URL("../assets/portfolio/web/2.jpg", import.meta.url).href,
+    alt: "Qisqa fade turmagi va aniq soch konturi",
+    label: "Fade",
+    focus: "50% 65%",
+    zoom: 1.1,
   },
   {
-    src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=900&q=80",
-    alt: "Klassik soch turmagi",
-    span: "short",
+    src: new URL("../assets/portfolio/web/3.jpg", import.meta.url).href,
+    alt: "Teksturali turmak va aniq shakllantirilgan soqol",
+    label: "Soch va soqol",
+    focus: "50% 60%",
+    zoom: 1.05,
   },
   {
-    src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=80",
-    alt: "Teksturali soch turmagi",
-    span: "wide",
+    src: new URL("../assets/portfolio/web/4.jpg", import.meta.url).href,
+    alt: "Yon tomonida chiziqli naqsh tushirilgan soch turmagi",
+    label: "Kreativ turmak",
+    focus: "50% 70%",
+    zoom: 1.12,
   },
   {
-    src: "https://images.unsplash.com/photo-1503951914875-45212b0136266?auto=format&fit=crop&w=900&q=80",
-    alt: "Soqolga shakl berish",
-    span: "tall",
+    src: new URL("../assets/portfolio/web/5.jpg", import.meta.url).href,
+    alt: "Orqa tomondan ko'rinish: fade turmagi va toza o'tishlar",
+    label: "Toza o'tishlar",
+    focus: "50% 55%",
+    zoom: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1521590832167-7bcb01a33f1d?auto=format&fit=crop&w=900&q=80",
-    alt: "Soch va soqol uyg'unligi",
-    span: "short",
+    src: new URL("../assets/portfolio/web/6.jpg", import.meta.url).href,
+    alt: "Teksturali soch turmagi va yon tomondagi silliq o'tish",
+    label: "Teksturali turmak",
+    focus: "50% 75%",
+    zoom: 1.25,
   },
   {
-    src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80",
-    alt: "Ish jarayoni detallari",
-    span: "short",
+    src: new URL("../assets/portfolio/web/7.jpg", import.meta.url).href,
+    alt: "Hajmli soch turmagi va qisqa yon tomonlar",
+    label: "Zamonaviy uslub",
+    focus: "50% 75%",
+    zoom: 1.25,
   },
   {
-    src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=900&q=80",
-    alt: "Yakuniy natija",
-    span: "wide",
+    src: new URL("../assets/portfolio/web/8.jpg", import.meta.url).href,
+    alt: "Yon ajrimli turmak va tartibli o'tishlar",
+    label: "Yon ajrim",
+    focus: "50% 65%",
+    zoom: 1.1,
   },
 ] as const;
 
@@ -183,18 +215,18 @@ export const interior = {
   text: "Qulay joy, sokin muhit — shunchaki soch olish uchun emas, dam olish uchun ham.",
   images: [
     {
-      src: "https://images.unsplash.com/photo-1585747860717-5790255afaa0?auto=format&fit=crop&w=1200&q=80",
-      alt: "Barbershop ish zonasi",
+      src: new URL("../assets/interior/interyer2.png", import.meta.url).href,
+      alt: "Barbershop ish joyi, yoritilgan oyna va televizor",
       size: "large",
     },
     {
-      src: "https://images.unsplash.com/photo-1633200512915-0c0a0a0a0a0a?auto=format&fit=crop&w=800&q=80",
-      alt: "Barbershop o'rindiqlari",
+      src: new URL("../assets/interior/interyer1.png", import.meta.url).href,
+      alt: "Barber kreslosi va ish joyi",
       size: "small",
     },
     {
-      src: "https://images.unsplash.com/photo-1521590832167-7bcb01a33f1d?auto=format&fit=crop&w=800&q=80",
-      alt: "Barbershop oynasi va yoritish",
+      src: new URL("../assets/interior/interyer3.jpg", import.meta.url).href,
+      alt: "Barbershop televizori va qahva burchagi",
       size: "small",
     },
   ],
@@ -209,16 +241,16 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     name: "Jasur",
-    text: "Usta avval qanday natija xohlayotganimni so'radi, keyin o'z tavsiyasini berdi. Ish toza va aniq bajarildi.",
+    text: "Usta ishni boshlashdan oldin qanday natija kutayotganimni so'radi va o'z maslahatini berdi. Natija — toza va aniq.",
     featured: true,
   },
   {
     name: "Aziz",
-    text: "Muhit sokin, xizmat shoshilmasdan amalga oshirildi. Soch va soqol bir-biriga juda mos tushdi.",
+    text: "Muhit sokin, hech qanday shoshqaloqlik yo'q. Har bir detal o'ylab qilingan, natija esa kutganimdan ham yaxshi chiqdi.",
   },
   {
     name: "Sardor",
-    text: "Belgilangan vaqtda qabul qilishdi. Natija kundalik parvarish uchun ham juda qulay bo'ldi.",
+    text: "Belgilangan vaqtda qabul qilishdi, kutish bo'lmadi. Turmak esa hali ham chiroyli ko'rinishda — kundalik parvarishi ham qulay.",
   },
 ];
 
@@ -226,12 +258,12 @@ export const faq = [
   {
     question: "Oldindan yozilish kerakmi?",
     answer:
-      "Ha, qo'ng'iroq qiling, siz uchun qulay vaqtni band qilib qo'yamiz.",
+      "Ha, o'z vaqtingizni belgilash uchun oldindan yozilish tavsiya etiladi. Telefon orqali yoki Instagram DM orqali bog'lanishingiz mumkin.",
   },
   {
     question: "Xizmat qancha vaqt oladi?",
     answer:
-      "Tanlangan xizmatga qarab o'rtacha 40 daqiqa vaqt ketadi.",
+      "Xizmat turiga qarab 30 daqiqadan 1 soatgacha vaqt oladi. Aniq vaqtni usta bilan bog'lanishda bilib olishingiz mumkin.",
   },
   {
     question: "To'lov qanday amalga oshiriladi?",
@@ -239,7 +271,7 @@ export const faq = [
   },
   {
     question: "Bolalar uchun xizmat bormi?",
-    answer: "Ha, bolalar uchun ham soch turmagi xizmati mavjud.",
+    answer: "Ha, bolalar uchun ham soch turmagi xizmati mavjud. Aniq narx va vaqtni oldindan so'rab bilishingiz mumkin.",
   },
 ] as const;
 
@@ -247,6 +279,6 @@ export const footer = {
   title: "Yangi obraz — bitta qo'ng'iroqdan boshlanadi.",
   subtitle: "Qulay vaqtingizni tanlash uchun biz bilan bog'laning.",
   ctaLabel: "Qo'ng'iroq qilish",
-  ctaHref: "tel:+998901234567",
+  ctaHref: "tel:+998916364290",
   copyright: "© DDBarbershop_. Barcha huquqlar himoyalangan.",
 };

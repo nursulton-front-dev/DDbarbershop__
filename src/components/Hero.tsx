@@ -1,5 +1,5 @@
 import { Phone, ArrowRight } from "lucide-react";
-import { hero, trust, site } from "../lib/site-data";
+import { hero, trust } from "../lib/site-data";
 import { Star } from "lucide-react";
 import { useReveal } from "../hooks/useReveal";
 
@@ -39,20 +39,13 @@ export default function Hero() {
               }}
             >
               {hero.titleTop}
-              <br />
-              {hero.titleBottom}
+              {hero.titleBottom && (
+                <>
+                  <br />
+                  {hero.titleBottom}
+                </>
+              )}
             </h1>
-
-            <p
-              className="mt-5 font-serif-display"
-              style={{
-                fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
-                color: "var(--brass-light)",
-                letterSpacing: "0.02em",
-              }}
-            >
-              {hero.brand}
-            </p>
 
             <p
               className="mt-6 max-w-xl"

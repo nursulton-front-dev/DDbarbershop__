@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { nav, site } from "../lib/site-data";
+import BrandLogo from "./BrandLogo";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,32 +39,13 @@ export default function Header() {
           className="flex items-center justify-between"
           style={{ height: 64 }}
         >
-          {/* Logo fallback monogram */}
+          {/* Brand logo */}
           <a
             href="#bosh"
             aria-label={`${site.brand} bosh sahifa`}
-            className="flex items-center gap-3"
+            className="brand-lockup block shrink-0"
           >
-            <span
-              className="font-serif-display"
-              style={{
-                fontSize: 22,
-                lineHeight: 1,
-                color: "var(--brass)",
-                border: "1px solid var(--brass)",
-                borderRadius: 4,
-                padding: "4px 8px",
-                letterSpacing: "0.04em",
-              }}
-            >
-              DD
-            </span>
-            <span
-              className="font-serif-display hidden sm:inline"
-              style={{ fontSize: 18, color: "var(--text-primary)" }}
-            >
-              {site.brand}
-            </span>
+            <BrandLogo alt={site.brand} />
           </a>
 
           {/* Desktop nav */}

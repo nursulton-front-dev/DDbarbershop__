@@ -76,17 +76,20 @@ function MasterProfile({
         >
           {master.role}
         </p>
-        <h3
-          className="font-serif-display mt-3"
-          style={{
-            fontSize: "clamp(2rem, 4.4vw, 3rem)",
-            fontWeight: 500,
-            lineHeight: 1.05,
-            color: "var(--text-primary)",
-          }}
-        >
-          {master.name}
-        </h3>
+        <div className="mt-3 flex flex-wrap items-center gap-3">
+          <h3
+            className="font-serif-display"
+            style={{
+              fontSize: "clamp(2rem, 4.4vw, 3rem)",
+              fontWeight: 500,
+              lineHeight: 1.05,
+              color: "var(--text-primary)",
+            }}
+          >
+            {master.name}
+          </h3>
+          {master.badge && <span className="vip-badge">{master.badge}</span>}
+        </div>
         <p
           className="mt-3 text-sm"
           style={{ color: "var(--brass)", letterSpacing: "0.02em" }}
@@ -100,19 +103,7 @@ function MasterProfile({
         />
 
         <p
-          className="mt-6 font-serif-display"
-          style={{
-            fontSize: "clamp(1.15rem, 2vw, 1.45rem)",
-            lineHeight: 1.35,
-            color: "var(--text-primary)",
-            fontWeight: 500,
-          }}
-        >
-          {master.shortLine}
-        </p>
-
-        <p
-          className="mt-5"
+          className="mt-5 whitespace-pre-line"
           style={{
             fontSize: "0.975rem",
             lineHeight: 1.7,
@@ -144,5 +135,4 @@ function MasterProfile({
     </div>
   );
 }
-
 

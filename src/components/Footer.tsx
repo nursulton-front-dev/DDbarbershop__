@@ -1,5 +1,6 @@
-import { Phone, MapPin, Clock, Instagram, Send } from "lucide-react";
+import { Phone, MapPin, Clock, Instagram } from "lucide-react";
 import { footer, site } from "../lib/site-data";
+import BrandLogo from "./BrandLogo";
 
 export default function Footer() {
   return (
@@ -45,7 +46,7 @@ export default function Footer() {
         </div>
 
         {/* Contact details */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
           <ContactItem icon={<MapPin size={18} strokeWidth={1.5} />} label="Manzil">
             {site.address}
           </ContactItem>
@@ -63,29 +64,29 @@ export default function Footer() {
               {site.social.instagram.label}
             </a>
           </ContactItem>
-          <ContactItem
-            icon={<Send size={18} strokeWidth={1.5} />}
-            label="Telegram"
-          >
-            <a
-              href={site.social.telegram.href}
-              style={{ color: "var(--text-primary)" }}
-            >
-              {site.social.telegram.label}
-            </a>
-          </ContactItem>
         </div>
 
         <div
           className="mt-14 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
           style={{ borderTop: "1px solid rgba(181, 164, 106, 0.2)" }}
         >
-          <p
-            className="font-serif-display"
-            style={{ fontSize: "1rem", color: "var(--text-primary)" }}
+          <a
+            href="#bosh"
+            aria-label={`${site.brand} bosh sahifa`}
+            className="brand-lockup inline-flex items-center gap-3 self-start"
           >
-            {site.brand}
-          </p>
+            <BrandLogo height={56} alt="" />
+            <span
+              className="font-serif-display"
+              style={{
+                fontSize: "1.0625rem",
+                color: "var(--text-primary)",
+                letterSpacing: "0.01em",
+              }}
+            >
+              {site.brand}
+            </span>
+          </a>
           <p
             className="text-xs"
             style={{ color: "var(--text-secondary)" }}
